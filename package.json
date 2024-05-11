@@ -1,0 +1,26 @@
+{
+  "name": "fake-store",
+  "version": "1.0.0",
+  "description": "My fake store to practice on API calls, promises, async functions, and front-end design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/daniel-citrus/fake-store.git"
+  },
+  "author": "Daniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniel-citrus/fake-store/issues"
+  },
+  "homepage": "https://github.com/daniel-citrus/fake-store#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "sass": "^1.77.1",
+    "sass-loader": "^14.2.1",
+    "webpack": "^5.91.0"
+  }
+}
