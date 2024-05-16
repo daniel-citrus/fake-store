@@ -10,7 +10,45 @@ async function getProducts(category, limit) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getProducts().then((val) => {
-        console.log(val);
+    getProducts().then((res) => {
+        const container = buildProductDisplay('all products', res);
+        document.getElementById('main-container').appendChild(container);
     });
 });
+
+function buildProductDisplay(title, products) {
+    const container = document.createElement('div');
+    container.classList.add('products', 'row', 'row-cols-4', 'row-gap-4');
+
+    products.forEach((product) => {
+        container.appendChild(buildProductCard(product));
+    });
+
+    return container;
+}
+
+function buildProductCard(product) {
+    const {
+        category = '',
+        description = '',
+        id = '',
+        image = '',
+        price = '',
+        rating = '',
+        title = '',
+    } = product;
+
+    const card = document.createElement('div');
+    card.classList.add('product', 'card', 'col');
+    card.title = description;
+
+    card.innerHTML = `
+        <img  class='card-img-top' src='${image}' alt='${description}'>
+        <div class='card-body d-flex flex-column justify-content-between'>
+            <p class='card-text text-truncate'>${description}</p>
+            <button type="button" class="btn btn-primary">Add to Cart</button>
+        </div>
+    `;
+
+    return card;
+}
