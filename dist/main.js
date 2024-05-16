@@ -169,7 +169,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \***************************************/
 /***/ (() => {
 
-eval("async function getProducts() {\r\n    try {\r\n        let data = await fetch('https://fakestoreapi.com/products');\r\n        data = await data.json();\r\n        return data;\r\n    } catch (e) {\r\n        // Oops, something went wrong!\r\n        console.error(e);\r\n    }\r\n}\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    getProducts().then((val) => {\r\n        console.log(val);\r\n    });\r\n});\r\n\n\n//# sourceURL=webpack://fake-store/./src/scripts/pages/products.js?");
+eval("async function getProducts(category, limit) {\r\n    try {\r\n        let data = await fetch('https://fakestoreapi.com/products');\r\n        data = await data.json();\r\n        return data;\r\n    } catch (e) {\r\n        // Oops, something went wrong!\r\n        console.error(e);\r\n    }\r\n}\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    getProducts().then((val) => {\r\n        console.log(val);\r\n    });\r\n});\r\n\n\n//# sourceURL=webpack://fake-store/./src/scripts/pages/products.js?");
 
 /***/ }),
 
