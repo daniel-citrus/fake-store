@@ -39,18 +39,20 @@ function buildProductCard(product) {
     } = product;
 
     const card = document.createElement('div');
-    card.classList.add('product', 'card', 'col');
+    card.classList.add('product', 'col');
     card.title = description;
 
     card.innerHTML = `
-            <img  class='card-img-top img-fluid' src='${image}' alt='${description}'>
-            <div class='card-body d-flex flex-column'>
-                <a href='#'>
-                    <p class='card-text text-truncate'>${description}</p>
-                </a>
-                <p class='card-text'>$${price}</p>
-                <button type="button" class="btn btn-primary mt-auto">Add to Cart</button>
-            </div>
+        <div class='card h-100'>
+            <a href='#' class='h-100'>
+                <div class='card-body d-flex flex-column h-100'>
+                    <img  class='img-fluid align-self-center mb-3' src='${image}' alt='${description}'>
+                    <p class='h-25 card-text fw-semibold'>${title}</p>
+                    <p class='card-text price'>$${price}</p>
+                    <button type="button" class="btn btn-primary mt-auto">Add to Cart</button>
+                </div>
+            </a>
+        </div>
     `;
 
     return card;
