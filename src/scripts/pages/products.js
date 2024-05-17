@@ -43,11 +43,14 @@ function buildProductCard(product) {
     card.title = description;
 
     card.innerHTML = `
-        <img  class='card-img-top' src='${image}' alt='${description}'>
-        <div class='card-body d-flex flex-column justify-content-between'>
-            <p class='card-text text-truncate'>${description}</p>
-            <button type="button" class="btn btn-primary">Add to Cart</button>
-        </div>
+            <img  class='card-img-top img-fluid' src='${image}' alt='${description}'>
+            <div class='card-body d-flex flex-column'>
+                <a href='#'>
+                    <p class='card-text text-truncate'>${description}</p>
+                </a>
+                <p class='card-text'>$${price}</p>
+                <button type="button" class="btn btn-primary mt-auto">Add to Cart</button>
+            </div>
     `;
 
     return card;
