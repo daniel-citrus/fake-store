@@ -11,14 +11,21 @@ async function getProducts(category, limit) {
 
 document.addEventListener('DOMContentLoaded', () => {
     getProducts().then((res) => {
-        const container = buildProductDisplay('all products', res);
+        const container = buildProductDisplay('All Products', res);
         document.getElementById('main-container').appendChild(container);
     });
 });
 
 function buildProductDisplay(title, products) {
     const container = document.createElement('div');
-    container.classList.add('products', 'row', 'row-cols-4', 'row-gap-4');
+    container.classList.add(
+        'row',
+        'row-cols-1',
+        'row-cols-sm-2',
+        'row-cols-md-3',
+        'row-cols-lg-4',
+        'row-gap-4'
+    );
 
     products.forEach((product) => {
         container.appendChild(buildProductCard(product));
@@ -44,9 +51,9 @@ function buildProductCard(product) {
 
     card.innerHTML = `
         <div class='card h-100'>
-            <a href='#' class='h-100'>
-                <div class='card-body d-flex flex-column h-100'>
-                    <img  class='img-fluid align-self-center mb-3' src='${image}' alt='${description}'>
+            <a href='#'>
+                <div class='card-body d-flex flex-column h-100 ratio-1x1'>
+                    <img  class='img-fluid img-thumblnail align-self-center' src='${image}' alt='${description}'>
                     <p class='h-25 card-text fw-semibold'>${title}</p>
                     <p class='card-text price'>$${price}</p>
                     <button type="button" class="btn btn-primary mt-auto">Add to Cart</button>
